@@ -1,15 +1,15 @@
 ﻿using System;
 using System.IO;
-using System.Numerics;
-using System.Reflection;
 using System.Text;
 using JavaCommons;
-//using JavaCommons.Windows;
-using Microsoft.ClearScript;
-using Microsoft.ClearScript.JavaScript;
-using Microsoft.ClearScript.V8;
-
-namespace CUI;
+public class CSharpGlobal
+{
+    public string[] args { get; }
+    public CSharpGlobal(string[] args)
+    {
+        this.args = args;
+    }
+}
 public static class Program
 {
     public static void Main(string[] args)
@@ -29,10 +29,23 @@ public static class Program
             string script = get_script_language(text, out lang);
             Util.Log(lang, "lang");
             //Util.Log(script, "script");
-            using (var engine = JavaScriptEngine.CreateEngine())
+            if (lang == "javascript")
             {
-                engine.Script.args = argsSlice;
-                engine.Execute(script);
+                using (var engine = JavaScriptEngine.CreateEngine())
+                {
+                    engine.Script.args = argsSlice;
+                    engine.Execute(script);
+                }
+            }
+            else if (lang == "csharp")
+            {
+                var engine = new CSharpEngine(false, new string[] { "JavaCommons" }, typeof(JavaCommons.Util).Assembly);
+                engine.Exec(script, new CSharpGlobal(argsSlice));
+            }
+            else
+            {
+                Util.Log(string.Format("Invalid language specifier: {}", lang));
+                Environment.Exit(1);
             }
         }
         catch (Exception e)

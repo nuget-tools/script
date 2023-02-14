@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>Dotnet CLI tool allowing you to run C#/JavaScript script.</Description>
-    <Version>2023.0215.0104.32</Version>
+    <Version>2023.0215.0131.27</Version>
     <TargetFramework>net6.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <OutputType>Exe</OutputType>
@@ -19,7 +19,7 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/nuget-tools/script.git</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <Nullable>disable</Nullable>
+    <Nullable>enable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Prefer32Bit>false</Prefer32Bit>
@@ -45,6 +45,9 @@
     <PackageReference Include="Microsoft.ClearScript.linux-arm64" Version="7.3.7" />
     <PackageReference Include="Microsoft.ClearScript.osx-x64" Version="7.3.7" />
     <PackageReference Include="Microsoft.ClearScript.osx-arm64" Version="7.3.7" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.3.1" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md">

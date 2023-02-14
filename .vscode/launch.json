@@ -16,7 +16,7 @@
         // 起動する（ビルドされた）実行ファイルパスを指定します。
         "program": "${workspaceFolder}/bin/Debug/net6.0/scr.dll",
         // 上記の実行ファイルに付加する引数を以下に記載します。
-        "args": [ "examples/demo.js" ],
+        "args": [ "examples/demo.csx", "a", "b", "c d" ],
         // 作業ファイルのあるディレクトリーパスを指定します。この例では実行ファイルのある場所です。
         "cwd": "${workspaceFolder}",
         // For more information about the 'console' field, see https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md#console-terminal-window
