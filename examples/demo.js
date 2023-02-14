@@ -1,4 +1,4 @@
-#! /usr/bin/env scr
+#! /usr/bin/env lang
 //#lang js
 
 Console.WriteLine('{0} is an interesting number.', Math.PI);
@@ -35,3 +35,5 @@ Console.WriteLine(random.NextDouble());
 
 var n = 1234567890123456789012345n;
 Util.Print(n);
+
+Util.Print(args, "args");

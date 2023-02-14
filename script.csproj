@@ -1,14 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>Dotnet CLI tool allowing you to run C#/JavaScript script.</Description>
-    <Version>2023.0215.0131.27</Version>
+    <Version>2023.0215.0224.13</Version>
     <TargetFramework>net6.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <OutputType>Exe</OutputType>
     <IsPackable>true</IsPackable>
-    <AssemblyName>scr</AssemblyName>
-    <PackageId>scr</PackageId>
-    <RootNamespace>scr</RootNamespace>
+    <AssemblyName>lang</AssemblyName>
+    <PackageId>lang</PackageId>
+    <RootNamespace>lang</RootNamespace>
     <PackAsTool>true</PackAsTool>
     <PreserveCompilationContext>false</PreserveCompilationContext>
     <Authors>javacommons</Authors>
