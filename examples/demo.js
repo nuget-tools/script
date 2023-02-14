@@ -22,10 +22,13 @@ _ 'whitespace' = [\s ]*
 
 var result = parse(syntax, "1 + 2 * 3");
 Util.Print(result);
-if (result["!"] === "error") Util.Log("error(1)");
+if (result["!"] === "error") Util.Log("error(1) " + result["?"]);
 result = parse(syntax, "1 + 2 * 3xxx");
 Util.Print(result);
-if (result["!"] === "error") Util.Log("error(2)");
+if (result["!"] === "error") Util.Log("error(2) " + result["?"]);
 
 random = new clr.System.Random();
 Console.WriteLine(random.NextDouble());
+
+var n = 1234567890123456789012345n;
+Util.Print(n);
