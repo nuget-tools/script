@@ -25,10 +25,14 @@ public static class Program
             ArraySegment<string> arySeg = new ArraySegment<string>(args, 1, args.Length - 1);
             string[] argsSlice = arySeg.ToArray();
             string text = File.ReadAllText(scriptName, Encoding.UTF8);
+            string lang;
+            string script = get_script_language(text, out lang);
+            Util.Log(lang, "lang");
+            //Util.Log(script, "script");
             using (var engine = JavaScriptEngine.CreateEngine())
             {
                 engine.Script.args = argsSlice;
-                engine.Execute(text);
+                engine.Execute(script);
             }
         }
         catch (Exception e)
@@ -36,5 +40,43 @@ public static class Program
             Util.Log(e.ToString());
             Environment.Exit(1);
         }
+    }
+    internal static string get_script_language(string text, out string lang)
+    {
+        lang = "javascript";
+        text = text.Replace("\r\n", "\n");
+        text = text.Replace("\r", "\n");
+        string script = "";
+        foreach (var line in text.Split('\n'))
+        {
+            if (line.StartsWith("#lang "))
+            {
+                lang = line.Replace("#lang ", "");
+                lang = lang.Trim().ToLower();
+            }
+            else if (line.StartsWith("//#lang "))
+            {
+                lang = line.Replace("//#lang ", "");
+                lang = lang.Trim().ToLower();
+            }
+            else if (line.StartsWith("#"))
+            {
+                ;
+            }
+            else
+            {
+                script += (line + "\n");
+            }
+        }
+        switch (lang)
+        {
+            case "js":
+                lang = "javascript";
+                break;
+            case "cs":
+                lang = "csharp";
+                break;
+        }
+        return script;
     }
 }

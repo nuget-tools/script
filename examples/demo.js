@@ -1,3 +1,6 @@
+#! /usr/bin/env scr
+//#lang JavaScript
+
 Console.WriteLine('{0} is an interesting number.', Math.PI);
 Console.WriteLine(123.45);
 Util.Print(123.45);
