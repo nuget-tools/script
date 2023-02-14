@@ -1,13 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>Dotnet CLI tool allowing you to run C#/JavaScript script.</Description>
-    <Version>2023.0214.2232.39</Version>
+    <Version>2023.0214.2304.43</Version>
     <TargetFramework>net6.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <OutputType>Exe</OutputType>
-    <AssemblyName>script</AssemblyName>
     <IsPackable>true</IsPackable>
-    <PackageId>script</PackageId>
+    <AssemblyName>scr</AssemblyName>
+    <PackageId>scr</PackageId>
+    <RootNamespace>scr</RootNamespace>
     <PackAsTool>true</PackAsTool>
     <PreserveCompilationContext>false</PreserveCompilationContext>
     <Authors>javacommons</Authors>
@@ -23,9 +24,6 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Prefer32Bit>false</Prefer32Bit>
     <ApplicationIcon>tarantula.ico</ApplicationIcon>
-    <!--
-    <RootNamespace>Script</RootNamespace>
-    -->
     <DefineConstants>$(DefineConstants);NETCORE;NET6_0</DefineConstants>
    </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
