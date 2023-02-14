@@ -1,5 +1,5 @@
 #! /usr/bin/env scr
-//#lang JavaScript
+//#lang js
 
 Console.WriteLine('{0} is an interesting number.', Math.PI);
 Console.WriteLine(123.45);

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>Dotnet CLI tool allowing you to run C#/JavaScript script.</Description>
-    <Version>2023.0214.2304.43</Version>
+    <Version>2023.0215.0104.32</Version>
     <TargetFramework>net6.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <OutputType>Exe</OutputType>
@@ -39,7 +39,12 @@
   <ItemGroup>
     <PackageReference Include="JavaCommons" Version="2023.205.2115.28" />
     <PackageReference Include="Microsoft.ClearScript" Version="7.3.7" />
+    <PackageReference Include="Microsoft.ClearScript.win-arm64" Version="7.3.7" />
     <PackageReference Include="Microsoft.ClearScript.linux-x64" Version="7.3.7" />
+    <PackageReference Include="Microsoft.ClearScript.linux-arm" Version="7.3.7" />
+    <PackageReference Include="Microsoft.ClearScript.linux-arm64" Version="7.3.7" />
+    <PackageReference Include="Microsoft.ClearScript.osx-x64" Version="7.3.7" />
+    <PackageReference Include="Microsoft.ClearScript.osx-arm64" Version="7.3.7" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md">
