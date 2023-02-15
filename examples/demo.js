@@ -37,3 +37,6 @@ var n = 1234567890123456789012345n;
 Util.Print(n);
 
 Util.Print(args, "args");
+
+Util.Print(1n + 2n);
+Util.Print(Util.FullName(1n + 2n));

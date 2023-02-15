@@ -85,17 +85,19 @@ clr.System.Environment.Exit(0);
         {
             if (line.StartsWith("#lang "))
             {
+                script += ("\n");
                 lang = line.Replace("#lang ", "");
                 lang = lang.Trim().ToLower();
             }
             else if (line.StartsWith("//#lang "))
             {
+                script += ("\n");
                 lang = line.Replace("//#lang ", "");
                 lang = lang.Trim().ToLower();
             }
             else if (line.StartsWith("#"))
             {
-                ;
+                script += ("\n");
             }
             else
             {
