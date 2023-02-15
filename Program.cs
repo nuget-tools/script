@@ -42,6 +42,21 @@ public static class Program
                 var engine = new CSharpEngine(false, new string[] { "JavaCommons" }, typeof(JavaCommons.Util).Assembly);
                 engine.Exec(script, new CSharpGlobal(argsSlice));
             }
+            else if (lang == "open_markup")
+            {
+                using (var engine = JavaScriptEngine.CreateEngine())
+                {
+                    engine.Script.__syntax__ = Util.ResourceAsText(typeof(Program).Assembly, "open_markup.peggy");
+                    engine.Script.__script__ = script;
+                    engine.Script.args = argsSlice;
+                    engine.Execute(
+"""
+var result = parse(__syntax__, __script__);
+Util.Print(result);
+if (result["!"] === "error") Util.Log("error: " + result["?"]);
+""");
+                }
+            }
             else
             {
                 Util.Log(string.Format("Invalid language specifier: {}", lang));
@@ -83,11 +98,14 @@ public static class Program
         }
         switch (lang)
         {
+            case "cs":
+                lang = "csharp";
+                break;
             case "js":
                 lang = "javascript";
                 break;
-            case "cs":
-                lang = "csharp";
+            case "om":
+                lang = "open_markup";
                 break;
         }
         return script;
