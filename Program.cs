@@ -52,8 +52,14 @@ public static class Program
                     engine.Execute(
 """
 var result = parse(__syntax__, __script__);
-Util.Print(result);
-if (result["!"] === "error") Util.Log("error: " + result["?"]);
+//Util.Print(result);
+if (result["!"] === "error")
+{
+  Util.Log("error: " + result["?"]);
+  clr.System.Environment.Exit(1);
+}
+Util.Print(result["?"]);
+clr.System.Environment.Exit(0);
 """);
                 }
             }

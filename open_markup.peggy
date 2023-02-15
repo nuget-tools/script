@@ -86,6 +86,7 @@ value
   / array
   / number
   / string
+  / identifier
   / list
 
 false = "false" { return false; }
@@ -222,6 +223,9 @@ IdentifierPart
   / [a-zA-Z0-9]
 
 // ----- ?. Lists -----
+
+identifier
+  = Identifier { return {"!": "identifier", "?": text()}; }
 
 list
   = begin_list
