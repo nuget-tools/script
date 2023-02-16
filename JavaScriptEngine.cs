@@ -9,8 +9,10 @@ public class JavaScriptEngine
         engine.AddHostObject("clr", new HostTypeCollection("mscorlib", "System.Core", "JavaCommons"));
         engine.AddHostType("Console", typeof(System.Console));
         engine.AddHostType("Util", typeof(JavaCommons.Util));
-        string script = Util.ResourceAsText(typeof(JavaScriptEngine).Assembly, "peggy.min.js");
-        engine.Execute(script);
+        //string script = Util.ResourceAsText(typeof(JavaScriptEngine).Assembly, "peggy.min.js");
+        //engine.Execute(script);
+        engine.Execute(Util.ResourceAsText(typeof(JavaScriptEngine).Assembly, "peggy.min.js"));
+        engine.Execute(Util.ResourceAsText(typeof(JavaScriptEngine).Assembly, "miniMAL-web.js"));
         engine.Execute("""
 function parse(syntax, text)
 {
