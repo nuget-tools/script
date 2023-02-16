@@ -41,3 +41,4 @@ Util.Print(args, "args");
 Util.Print(1n + 2n);
 Util.Print(Util.FullName(1n + 2n));
 Util.Print([1n, 2n][0]);
+Console.WriteLine(1n);
