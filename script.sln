@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.2.11415.280 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "script", "script.csproj", "{80B61C59-6334-75AE-92A3-E7E452B2E5E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "script", "src\script.csproj", "{80B61C59-6334-75AE-92A3-E7E452B2E5E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9440D05E-02A1-4D94-B4BF-3AABFF8743D2}
+		SolutionGuid = {B02ADBAB-B9CB-4BD8-8AD1-BF5FB72D4847}
 	EndGlobalSection
 EndGlobal
